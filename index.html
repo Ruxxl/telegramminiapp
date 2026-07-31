@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MechtaBot Console</title>
+
+<!-- ============================================================
+     ВАРИАНТ Б: фронт живёт на GitHub Pages, backend — на Render.
+     Явно указываем адрес backend'а, чтобы fetch() в скрипте ниже
+     не пытался стучаться на сам github.io (там /api/* не существует).
+     ЗАМЕНИ URL ниже на реальный адрес твоего Render-сервиса!
+     ============================================================ -->
+<script>
+  window.MECHTABOT_API_BASE = "https://mechtabot.onrender.com";
+</script>
+
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
   :root{
@@ -342,9 +353,8 @@
 
   /* ===================================================================
      КОНФИГ
-     Замени на адрес своего backend (Render). Бэкенд должен отдавать
-     JSON-эндпоинты, описанные ниже в APIов — их пока нет в существующем
-     aiohttp-приложении бота (main.py), их нужно добавить отдельно.
+     API_BASE берётся из window.MECHTABOT_API_BASE, заданного в <head>
+     выше (вариант Б: фронт на GitHub Pages, backend на Render).
      Пока API недоступен/не отвечает — интерфейс показывает демо-данные
      с пометкой "демо", чтобы страница всегда выглядела рабочей.
   =================================================================== */
