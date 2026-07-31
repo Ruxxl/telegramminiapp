@@ -538,7 +538,6 @@
     var el = document.getElementById("releaseCard");
     var demo = d.demo ? '<span class="demo-flag">⚠ демо</span><br>' : "";
     el.innerHTML =
-      '<div class="card-cmd">release --latest</div>' +
       '<h2>Последний релиз</h2>' + demo +
       '<div style="display:flex; align-items:center; gap:8px; margin-top:6px;">' +
         '<span class="badge ok">' + esc(d.version || "—") + '</span>' +
