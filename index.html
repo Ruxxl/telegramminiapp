@@ -834,10 +834,10 @@
     var demo = d.demo ? '<span class="demo-flag">⚠ демо</span><br>' : "";
     var pct = d.total ? Math.round((d.done / d.total) * 100) : 0;
     el.innerHTML =
-      '<h2>Будущий релиз</h2>' + demo +
-      '<div style="display:flex; align-items:center; gap:8px; margin-top:6px;">' +
+      '<div style="display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">' +
+        '<h2 style="margin:0;">Будущий релиз</h2>' +
         '<span class="badge">' + esc(d.name || "N/A") + '</span>' +
-      '</div>' +
+      '</div>' + demo +
       '<div style="background:var(--surface-2); border-radius:8px; height:10px; overflow:hidden; margin:10px 0 8px;">' +
         '<div style="width:'+pct+'%; height:100%; background:linear-gradient(90deg, var(--accent), var(--ok));"></div>' +
       '</div>' +
